@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candle Wax Calculator: How Much Wax for Your Jars · Candle Lab</title>
+  <meta name="description" content="Free candle wax calculator. Enter your jar size and how many jars, and see exactly how much wax and fragrance oil to melt.">
+  <link rel="canonical" href="https://bwmannering.github.io/candle-lab-site/candle-wax-calculator.html">
+  <meta property="og:title" content="Candle Wax Calculator · Candle Lab">
+  <meta property="og:description" content="How much wax and fragrance oil to melt for any number of jars.">
+  <meta property="og:image" content="https://bwmannering.github.io/candle-lab-site/icon.png">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="calc.js" defer></script>
+</head>
+<body data-calc="wax">
+  <header>
+    <div class="inner">
+      <img src="logo-mark.png" alt="">
+      <a class="brand" href="./">Candle Lab</a>
+      <nav>
+        <a href="calculators.html" aria-current="page">Calculators</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Candle <span class="accent">Wax Calculator</span></h1>
+    <p class="subtitle">How much wax to melt for your jars. Just type and see.</p>
+
+    <nav class="calc-tabs" aria-label="Calculators">
+      <a href="candle-wax-calculator.html" aria-current="page"><span class="dot wax"></span>Wax</a>
+      <a href="fragrance-oil-calculator.html"><span class="dot fragrance"></span>Fragrance</a>
+      <a href="candle-cost-calculator.html"><span class="dot cost"></span>Cost</a>
+    </nav>
+
+    <div class="calc-grid">
+      <section class="calc-card" aria-labelledby="t-jars">
+        <div class="card-head"><span class="stripe wax"></span><h2 class="card-title" id="t-jars">Your jars</h2></div>
+        <div class="field">
+          <label for="jarFlOz">Jar size</label>
+          <div class="input-wrap"><input id="jarFlOz" data-key="jarFlOz" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 8"><span class="suffix">fl oz</span></div>
+        </div>
+        <div class="field">
+          <label for="jars">Number of jars</label>
+          <div class="input-wrap"><input id="jars" data-key="jars" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 12"><span class="suffix">jars</span></div>
+        </div>
+        <div class="field">
+          <label for="wLoad">Fragrance load</label>
+          <div class="input-wrap"><input id="wLoad" data-key="wLoad" type="number" inputmode="decimal" min="0" step="any" value="8" placeholder="e.g. 8"><span class="suffix">%</span></div>
+        </div>
+      </section>
+
+      <section class="result-card" aria-live="polite">
+        <div class="hero-label">Wax to melt</div>
+        <div class="hero-value" id="r-wax">0.0 oz</div>
+        <div class="hero-sub" id="r-wax-lb">0.00 lb · 0 g</div>
+        <div class="divider"></div>
+        <div class="row"><span>Fragrance oil</span><span id="r-oil">0.0 oz</span></div>
+        <div class="row"><span>Total pour weight</span><span id="r-total">0.0 oz</span></div>
+      </section>
+    </div>
+
+    <p class="hint" style="margin-top:14px">Not sure of your jar size? Fill it with water to where you'd pour and measure in fl oz. Uses 0.86 oz of wax per fl oz, a common rule for soy. Melt a little extra.</p>
+
+    <div class="app-cta">
+      <img src="icon.png" alt="">
+      <div>
+        <strong>Save it as a recipe</strong>
+        <span>Candle Lab tracks your supplies, works out cost per candle, and deducts wax every time you pour.</span>
+      </div>
+      <a class="btn" data-app-link href="./">Learn more</a>
+    </div>
+
+    <section class="faq">
+      <h2>Quick reference (8% fragrance load)</h2>
+      <div class="table-wrap"><table class="ref">
+        <thead><tr><th>Jar size</th><th>Wax</th><th>Fragrance oil</th><th>Total pour</th></tr></thead>
+        <tbody>
+          <tr><td>4 fl oz</td><td>3.2 oz</td><td>0.3 oz</td><td>3.4 oz</td></tr>
+          <tr><td>6 fl oz</td><td>4.8 oz</td><td>0.4 oz</td><td>5.2 oz</td></tr>
+          <tr><td>8 fl oz</td><td>6.4 oz</td><td>0.5 oz</td><td>6.9 oz</td></tr>
+          <tr><td>10 fl oz</td><td>8.0 oz</td><td>0.6 oz</td><td>8.6 oz</td></tr>
+          <tr><td>12 fl oz</td><td>9.6 oz</td><td>0.8 oz</td><td>10.3 oz</td></tr>
+          <tr><td>16 fl oz</td><td>12.7 oz</td><td>1.0 oz</td><td>13.8 oz</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>How the wax calculator works</h2>
+      <h3>Why isn't an 8 oz jar 8 oz of wax?</h3>
+      <p>Jars are sold by <strong>volume</strong> (fluid ounces), but wax is measured by <strong>weight</strong> (ounces on a scale). Wax is lighter than water, so an 8 fl oz jar holds about 6.9 oz of poured candle, not 8.</p>
+
+      <h3>Where does 0.86 come from?</h3>
+      <p>Soy wax weighs roughly 0.86 oz per fluid ounce of space. It's a widely used rule of thumb. Paraffin and coconut blends are a little heavier, and beeswax is heavier still, so if you use those, melt a bit more.</p>
+
+      <h3>Why does fragrance load change the wax amount?</h3>
+      <p>Fragrance oil takes up part of the jar. The calculator works out the total pour weight, then splits it into wax and oil so that the oil is your chosen percentage of the wax weight.</p>
+
+      <h3>Should I melt extra?</h3>
+      <p>Yes. Some wax always stays in the pouring pitcher, and you may need a second pour to fill sinkholes. An extra 5–10% is a good habit.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Candle Lab · <a href="calculators.html">Calculators</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candle Cost Calculator: Cost per Candle &amp; Pricing · Candle Lab</title>
+  <meta name="description" content="Free candle cost calculator. Work out what one candle costs to make, including wax, fragrance oil, wick and jar, plus starting wholesale and retail prices.">
+  <link rel="canonical" href="https://bwmannering.github.io/candle-lab-site/candle-cost-calculator.html">
+  <meta property="og:title" content="Candle Cost Calculator · Candle Lab">
+  <meta property="og:description" content="What one candle costs to make, plus starting wholesale and retail prices.">
+  <meta property="og:image" content="https://bwmannering.github.io/candle-lab-site/icon.png">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="calc.js" defer></script>
+</head>
+<body data-calc="cost">
+  <header>
+    <div class="inner">
+      <img src="logo-mark.png" alt="">
+      <a class="brand" href="./">Candle Lab</a>
+      <nav>
+        <a href="calculators.html" aria-current="page">Calculators</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Candle <span class="accent">Cost Calculator</span></h1>
+    <p class="subtitle">What one candle costs to make, and what to charge.</p>
+
+    <nav class="calc-tabs" aria-label="Calculators">
+      <a href="candle-wax-calculator.html"><span class="dot wax"></span>Wax</a>
+      <a href="fragrance-oil-calculator.html"><span class="dot fragrance"></span>Fragrance</a>
+      <a href="candle-cost-calculator.html" aria-current="page"><span class="dot cost"></span>Cost</a>
+    </nav>
+
+    <div class="calc-grid">
+      <section class="calc-card" aria-labelledby="t-per">
+        <div class="card-head"><span class="stripe cost"></span><h2 class="card-title" id="t-per">Per candle</h2></div>
+        <div class="field">
+          <label for="waxOz">Wax per candle</label>
+          <div class="input-wrap"><input id="waxOz" data-key="waxOz" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 7"><span class="suffix">oz</span></div>
+        </div>
+        <div class="field">
+          <label for="waxPriceLb">Wax price</label>
+          <div class="input-wrap"><input id="waxPriceLb" data-key="waxPriceLb" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 3.50"><span class="suffix">$ / lb</span></div>
+        </div>
+        <div class="field">
+          <label for="load">Fragrance load</label>
+          <div class="input-wrap"><input id="load" data-key="load" type="number" inputmode="decimal" min="0" step="any" value="8" placeholder="e.g. 8"><span class="suffix">%</span></div>
+        </div>
+        <div class="field">
+          <label for="oilPriceOz">Fragrance oil price</label>
+          <div class="input-wrap"><input id="oilPriceOz" data-key="oilPriceOz" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 2.00"><span class="suffix">$ / oz</span></div>
+        </div>
+        <div class="field">
+          <label for="wick">Wick</label>
+          <div class="input-wrap"><input id="wick" data-key="wick" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 0.15"><span class="suffix">$</span></div>
+        </div>
+        <div class="field">
+          <label for="jar">Jar / container</label>
+          <div class="input-wrap"><input id="jar" data-key="jar" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 1.80"><span class="suffix">$</span></div>
+        </div>
+        <div class="field">
+          <label for="other">Label, lid, other</label>
+          <div class="input-wrap"><input id="other" data-key="other" type="number" inputmode="decimal" min="0" step="any" placeholder="optional"><span class="suffix">$</span></div>
+        </div>
+      </section>
+
+      <section class="result-card" aria-live="polite">
+        <div class="hero-label">Cost per candle</div>
+        <div class="hero-value" id="r-cost">$0.00</div>
+        <div class="divider"></div>
+        <div class="row"><span>Wax</span><span id="r-wax">$0.00</span></div>
+        <div class="row"><span id="r-oil-label">Fragrance (0.00 oz)</span><span id="r-oil">$0.00</span></div>
+        <div class="row"><span>Wick, jar &amp; other</span><span id="r-parts">$0.00</span></div>
+        <div class="tiles">
+          <div class="tile"><div class="tile-label">Wholesale · 2×</div><div class="tile-value" id="r-wholesale">$0.00</div></div>
+          <div class="tile"><div class="tile-label">Retail · 3×</div><div class="tile-value gold" id="r-retail">$0.00</div></div>
+        </div>
+      </section>
+    </div>
+
+    <p class="hint" style="margin-top:14px">2× and 3× cost are common starting points. Your time and fees aren't included.</p>
+
+    <div class="app-cta">
+      <img src="icon.png" alt="">
+      <div>
+        <strong>Track profit on every sale</strong>
+        <span>Candle Lab keeps your costs up to date, logs sales at markets, and shows your real margin per candle.</span>
+      </div>
+      <a class="btn" data-app-link href="./">Learn more</a>
+    </div>
+
+    <section class="faq">
+      <h2>Pricing your candles</h2>
+      <h3>What does it cost to make a candle?</h3>
+      <p>It depends on your supplies, but for a typical 8 oz soy candle, wax and fragrance usually come to a couple of dollars, and the jar is often the single biggest cost. Plug in your own prices above for a real number.</p>
+
+      <h3>What's the 2× / 3× rule?</h3>
+      <p>A common starting point is to charge about <strong>2× your cost</strong> when selling wholesale to shops, and about <strong>3× your cost</strong> for retail (selling directly to customers). It leaves room for your time, fees and profit. Adjust it for your market.</p>
+
+      <h3>What isn't included?</h3>
+      <p>This calculator covers materials. It doesn't include your time, selling fees (Etsy, card readers, market booths), shipping or packaging. Those can add up, so factor them in before you settle on a price.</p>
+
+      <h3>How do I find my wax per candle?</h3>
+      <p>Use the <a href="candle-wax-calculator.html">wax calculator</a>: enter your jar size and 1 jar, and use the "Wax to melt" number.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Candle Lab · <a href="calculators.html">Calculators</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></footer>
+</body>
+</html>
