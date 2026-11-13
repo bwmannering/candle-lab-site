@@ -4,8 +4,8 @@
  * Inputs are remembered in this browser only (localStorage). Nothing is sent anywhere.
  */
 
-// When the app is live, paste the App Store link here and every "Coming soon" button becomes a download link.
-const APP_STORE_URL = "";
+// App Store link used by every download button on the site.
+const APP_STORE_URL = "https://apps.apple.com/us/app/candle-lab-wax-wick-pour/id6831802911";
 
 // Soy wax weighs roughly 0.86 oz per fl oz of jar space (common candle-making rule).
 const WAX_OZ_PER_FL_OZ = 0.86;
@@ -67,11 +67,11 @@ const CALCS = {
 };
 
 function init() {
-  // App buttons: "Coming soon" until APP_STORE_URL is filled in.
+  // Download buttons point at the App Store (falls back to "Coming soon" if the URL is ever blanked).
   document.querySelectorAll("[data-app-link]").forEach((a) => {
     if (APP_STORE_URL) {
       a.href = APP_STORE_URL;
-      a.textContent = "Get the app";
+      a.textContent = a.dataset.appLink === "store" ? "Download on the App Store" : "Get the app";
       a.classList.remove("soon");
     } else {
       a.removeAttribute("href");
